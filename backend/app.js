@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 
-mongoose.connect('mongodb://localhost:27017/your_db_name', {
+mongoose.connect('mongodb+srv://trideb:trideb@cluster0.phdlm.mongodb.net/CRUDOPR', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => console.log('MongoDB connected'))
