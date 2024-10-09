@@ -23,7 +23,7 @@ const Employee = () => {
         }
 
         try {
-            await axios.post('http://localhost:3000/employees', {
+            await axios.post('https://crudassignment1-2.onrender.com/employees', {
                 name,
                 position,
                 salary,
@@ -44,7 +44,7 @@ const Employee = () => {
 
     const deleteEmployee = async () => {
         try {
-            await axios.delete(`http://localhost:3000/employees/name/${employeeIdToDelete}`);
+            await axios.delete(`https://crudassignment1-2.onrender.com/employees/name/${employeeIdToDelete}`);
             setEmployees(employees.filter((employee) => employee.name !== employeeIdToDelete));
             setEmployeeIdToDelete('');
             setMessage('Employee deleted successfully!');
@@ -65,7 +65,7 @@ const Employee = () => {
         }
 
         try {
-            const response = await axios.get(`http://localhost:3000/employees/name/${searchName}`);
+            const response = await axios.get(`https://crudassignment1-2.onrender.com/employees/name/${searchName}`);
             if (response.data) {
                 setsearchnameemp(response.data);
                 setMessage('Employee found successfully!');
@@ -85,7 +85,7 @@ const Employee = () => {
 
     const fetchHighestSalaryEmployee = async () => {
         try {
-            const response = await axios.get('http://localhost:3000/employees/highest-salary');
+            const response = await axios.get('https://crudassignment1-2.onrender.com/employees/highest-salary');
             setHighestSalaryEmployee(response.data);
         } catch (error) {
             console.error('Error fetching employee with highest salary:', error);
@@ -95,7 +95,7 @@ const Employee = () => {
 
     const fetchEmployees = async () => {
         try {
-            const response = await axios.get('http://localhost:3000/employees');
+            const response = await axios.get('https://crudassignment1-2.onrender.com/employees');
             setEmployees(response.data);
             setShowEmployees(true);
         } catch (error) {
